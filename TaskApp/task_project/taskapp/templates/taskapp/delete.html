@@ -1,0 +1,15 @@
+{% extends 'taskapp/base.html' %}
+
+{% block title %}
+削除
+{% endblock title %}
+
+{% block content %}
+    <p>このタスクを削除します。よろしいですか？</p>
+    <p>タスク： {{ item }}</p>
+    <a href={% url 'list' %}>キャンセル</a>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <input type="submit" name="Confirm">
+    </form>
+{% endblock content %}
